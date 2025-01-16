@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Ecf2.props" />
+</Project>
