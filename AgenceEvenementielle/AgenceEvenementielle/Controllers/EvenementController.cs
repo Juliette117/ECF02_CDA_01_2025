@@ -15,7 +15,7 @@ namespace AgenceEvenementielle.Controllers
 
         public IActionResult Index()
         {
-            List<Evenement> evenements = _context.Evenements.OrderBy(evenement => evenement.Id).ToList();
+            List<Evenement> evenements = _context.Evenements.OrderBy(evenement => evenement.Nom).ToList();
             return View(evenements);
         }
 
@@ -24,9 +24,41 @@ namespace AgenceEvenementielle.Controllers
             return View();
         }
 
-        public IActionResult Edit()
+        [HttpPost]
+        public IActionResult Create(Evenement evenement)
         {
-            return View();
+            _context.Evenements.Add(evenement);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(string id)
+        {
+            Evenement evenement = _context.Evenements.FirstOrDefault(evenement => evenement.Nom.Equals(id));
+            if (evenement == null)
+            
+                return NotFound();
+            
+            return View(evenement);
+            
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Evenement evenement)
+        { 
+            Evenement evenementExistant = _context.Evenements.FirstOrDefault(evenement => evenement.Nom.Equals(evenement.Nom));
+            if (evenementExistant == null)
+            {
+                ViewBag.Erreur = "Cet événement n'existe pas";
+                return View(evenement);
+            }
+            evenementExistant.Nom = evenement.Nom;
+            evenementExistant.Lieu = evenement.Lieu;
+            evenementExistant.Horraire = evenement.Horraire;
+            evenementExistant.Date = evenement.Date;
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

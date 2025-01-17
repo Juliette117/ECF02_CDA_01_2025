@@ -1,20 +1,17 @@
 ﻿@model IEnumerable<AgenceEvenementielle.Models.Evenement>
 
 @{
-    ViewData["Title"] = "Evénements à venir";
+    ViewData["Title"] = "Evénements";
 }
 
-<h1>Index</h1>
-@* 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+<h1 class="display-4">Bienvenue sur le gestionnaire des événements Wow Event </h1>
+
+<h2>Evenements à venir </h2>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nom)
             </th>
@@ -34,9 +31,6 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Nom)
             </td>
             <td>
@@ -49,12 +43,15 @@
                 @Html.DisplayFor(modelItem => item.Horraire)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Modifier", "Edit", new { id = item.Nom }) |
+                @Html.ActionLink("Supprimer", "Delete", new { IDataTokensMetadata = item.Nom })
             </td>
         </tr>
 }
     </tbody>
 </table>
- *@
+
+
+<button>
+    <a asp-action="Create">Creer un événement</a>
+</button>

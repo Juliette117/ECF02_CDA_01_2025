@@ -12,5 +12,26 @@ namespace AgenceEvenementielle.Data
 
         public EvenementContext(DbContextOptions options) : base(options) { }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            
+        }
+        //LINQ
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Evenement>().HasKey(evenement => evenement.Id);
+            modelBuilder.Entity<Evenement>().Property(evenement => evenement.Nom).IsRequired().HasMaxLength(20);
+            modelBuilder.Entity<Evenement>().Property(evenement => evenement.Lieu).IsRequired().HasMaxLength(50);
+            modelBuilder.Entity<Evenement>().Property(evenement => evenement.Date).IsRequired();
+            modelBuilder.Entity<Evenement>().Property(evenement => evenement.Horraire).IsRequired().HasMaxLength(20);
+
+            modelBuilder.Entity<Participant>().Property(participant => participant.Nom).IsRequired().HasMaxLength(50);
+            modelBuilder.Entity<Participant>().Property(participant => participant.Prenom).IsRequired().HasMaxLength(50);
+
+            modelBuilder.Entity<Participant>().HasMany<Evenement>(participant => participant.Evenements)
+                                              .WithMany(evenement => evenement.Participants);
+
+        }
+
     }
 }
