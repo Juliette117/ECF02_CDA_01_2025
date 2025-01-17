@@ -60,5 +60,44 @@ namespace AgenceEvenementielle.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(string id)
+        {
+            Evenement evenement = _context.Evenements.FirstOrDefault(evenement => evenement.Nom.Equals(id));
+            if (evenement == null)
+
+                return NotFound();
+
+            return View(evenement);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Evenement evenement)
+        {
+            Evenement evenementASuppr = _context.Evenements.FirstOrDefault(evenement => evenement.Nom.Equals(evenement.Nom));
+            if (evenementASuppr == null)
+            {
+                
+                return View(evenement);
+            }
+            _context.Evenements.Remove(evenementASuppr);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Statistique()
+        {
+            return View();
+
+        }
+
+        public IActionResult Participant()
+        {
+            return View();
+
+        }
+
+
     }
 }

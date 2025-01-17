@@ -5,12 +5,12 @@
 }
 
 
-<h1 class="display-4">Bienvenue sur le gestionnaire des événements Wow Event </h1>
+<h1 class="display-4; text-center">Bienvenue sur le gestionnaire des événements Wow Event </h1>
 
 <h2>Evenements à venir </h2>
 
 <table class="table">
-    <thead>
+     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nom)
@@ -24,7 +24,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Horraire)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Participants)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -42,16 +44,26 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Horraire)
             </td>
+                <td>
+                    <a asp-action="Participant">Liste des participants</a>
+                </td>
             <td>
-                @Html.ActionLink("Modifier", "Edit", new { id = item.Nom }) |
-                @Html.ActionLink("Supprimer", "Delete", new { IDataTokensMetadata = item.Nom })
+                    <button class="btn btn-outline-primary">
+                        @Html.ActionLink("Modifier", "Edit", new { id = item.Nom }) 
+                </button>
+                <button class="btn btn-outline-primary">
+                        @Html.ActionLink("Supprimer", "Delete", new { id = item.Nom })
+                </button>
+          
+
+                
             </td>
         </tr>
 }
-    </tbody>
+    </tbody> 
 </table>
 
 
-<button>
-    <a asp-action="Create">Creer un événement</a>
-</button>
+
+    <a class="btn btn-outline-primary" asp-action="Create" role="button">Créer un événement</a>
+

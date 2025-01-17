@@ -32,12 +32,24 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmVtZW50XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Administrateur/Desktop/Dev/ECF_2/AgenceEvenementielle/AgenceEvenementielle/Views/Evenement/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmVtZW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Administrateur/Desktop/Dev/ECF_2/AgenceEvenementielle/AgenceEvenementielle/Views/Evenement/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmVtZW50XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrateur/Desktop/Dev/ECF_2/AgenceEvenementielle/AgenceEvenementielle/Views/Evenement/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmVtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrateur/Desktop/Dev/ECF_2/AgenceEvenementielle/AgenceEvenementielle/Views/Evenement/Participant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmVtZW50XFBhcnRpY2lwYW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrateur/Desktop/Dev/ECF_2/AgenceEvenementielle/AgenceEvenementielle/Views/Evenement/Statistique.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbmVtZW50XFN0YXRpc3RpcXVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrateur/Desktop/Dev/ECF_2/AgenceEvenementielle/AgenceEvenementielle/Views/Home/Index.cshtml]
