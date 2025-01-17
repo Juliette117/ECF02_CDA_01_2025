@@ -1,4 +1,11 @@
+using AgenceEvenementielle.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Injection des dépendances
+builder.Services.AddDbContext<EvenementContext>(OptionsBuilderConfigurationExtensions =>
+    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration.GetConnectionString("Evenements")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -22,7 +29,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Evenement}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
