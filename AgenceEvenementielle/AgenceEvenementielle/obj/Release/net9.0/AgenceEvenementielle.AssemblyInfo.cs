@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgenceEvenementielle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd8115c3ef05e76477ca2b9e26702a38f06178f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fd3b8942750bff1cf2963359fd971b9b91f15f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgenceEvenementielle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgenceEvenementielle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

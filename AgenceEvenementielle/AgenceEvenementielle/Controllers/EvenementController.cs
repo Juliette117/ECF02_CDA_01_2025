@@ -94,10 +94,22 @@ namespace AgenceEvenementielle.Controllers
 
         public IActionResult Participant()
         {
-            return View();
+            var participants = new Participant
+            {
+                Id = 1,
+                Nom = "Martin",
+                Prenom = "Jean-Pierre",
+
+            };
+            List<Participant> listeParticipants = _context.Participants.OrderBy(participant => participant.Nom).ToList();
+            return View(listeParticipants);
 
         }
 
+        public IActionResult CreateParticipant()
+        {
+            return View();
+        }
 
     }
 }

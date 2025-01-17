@@ -6,11 +6,15 @@ namespace AgenceEvenementielle.Data
     public class EvenementContext : DbContext
     {
         public DbSet<Evenement> Evenements { get; set; }
-        public DbSet<Participant> Participants { get; set; }
-
+        //public DbSet<Participant> Participants { get; set; }
+        public List<Participant> Participants { get; } = new List<Participant>();
         public DbSet<Statistique> Statistiques { get; set; }
 
-        public EvenementContext(DbContextOptions options) : base(options) { }
+      
+
+        public EvenementContext(DbContextOptions options) : base(options) {
+            Participant JMARTIN = new Participant { Id = 1, Nom = "MARTIN", Prenom = "Jean-Pierre" };
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +36,7 @@ namespace AgenceEvenementielle.Data
                                               .WithMany(evenement => evenement.Participants);
 
         }
+        public DbSet<AgenceEvenementielle.Models.Participant> Participant { get; set; } = default!;
 
     }
 }
